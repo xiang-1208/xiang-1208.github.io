@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>论文综述 - FeelIt</title><meta name="description" content="关于 FeelIt 主题"><meta property="og:title" content="论文综述" />
+<meta property="og:description" content="SLAM相关论文综合" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xiang-1208.github.io/zh-cn/%E8%AE%BA%E6%96%87%E7%BB%BC%E8%BF%B0/" /><meta property="og:image" content="https://xiang-1208.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-17T16:38:05+08:00" />
+<meta property="article:modified_time" content="2021-09-17T16:38:05+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://xiang-1208.github.io/logo.png"/>
+
+<meta name="twitter:title" content="论文综述"/>
+<meta name="twitter:description" content="SLAM相关论文综合"/>
+<meta name="application-name" content="FeelIt">
+<meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://xiang-1208.github.io/zh-cn/%E8%AE%BA%E6%96%87%E7%BB%BC%E8%BF%B0/" /><link rel="next" href="https://xiang-1208.github.io/zh-cn/emoji-support/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "论文综述",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/xiang-1208.github.io\/zh-cn\/%E8%AE%BA%E6%96%87%E7%BB%BC%E8%BF%B0\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/xiang-1208.github.io\/images\/Apple-Devices-Preview.webp",
+                            "width":  1129 ,
+                            "height":  614 
+                        }],"genre": "posts","keywords": "综述","wordcount":  248 ,
+        "url": "https:\/\/xiang-1208.github.io\/zh-cn\/%E8%AE%BA%E6%96%87%E7%BB%BC%E8%BF%B0\/","datePublished": "2021-09-17T16:38:05+08:00","dateModified": "2021-09-17T16:38:05+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/xiang-1208.github.io\/images\/avatar.webp",
+                    "width":  300 ,
+                    "height":  300 
+                }},"author": {
+                "@type": "Person",
+                "name": "xiang"
+            },"description": ""
+    }
+    </script></head><body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zh-cn/" title="FeelIt"><span class="header-title-pre"><i class='fas fa-hand-holding-heart fa-fw'></i></span>FeelIt</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zh-cn/posts/"> 所有文章 </a><a class="menu-item" href="/zh-cn/tags/"> 标签 </a><a class="menu-item" href="/zh-cn/categories/"> 分类 </a><a class="menu-item" href="/zh-cn/categories/documentation/"> 文档 </a><a class="menu-item" href="/zh-cn/about/"> 关于 </a><a class="menu-item" href="https://github.com/khusika/FeelIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/zh-cn/%E8%AE%BA%E6%96%87%E7%BB%BC%E8%BF%B0/" selected>简体中文</option></select>
+                    </span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a class="menu-item" href="/index.xml" title="RSS"><i class="fas fa-rss fa-fw" title="RSS"></i> </a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zh-cn/" title="FeelIt"><span class="header-title-pre"><i class='fas fa-hand-holding-heart fa-fw'></i></span>FeelIt</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/zh-cn/posts/" title="">所有文章</a><a class="menu-item" href="/zh-cn/tags/" title="">标签</a><a class="menu-item" href="/zh-cn/categories/" title="">分类</a><a class="menu-item" href="/zh-cn/categories/documentation/" title="">文档</a><a class="menu-item" href="/zh-cn/about/" title="">关于</a><a class="menu-item" href="https://github.com/khusika/FeelIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><div class="menu-item"><a href="/index.xml" title="RSS"><i class="fas fa-rss fa-fw" title="RSS"></i> </a>
+                <span>&nbsp;|&nbsp;</span><a href="javascript:void(0);" class="theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div><span class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/zh-cn/%E8%AE%BA%E6%96%87%E7%BB%BC%E8%BF%B0/" selected>简体中文</option></select>
+                </span></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single" data-toc="enable">
+
+        
+
+        <div class="single-card" ><h2 class="single-title animated flipInX">论文综述</h2><div class="post-meta">
+                <div class="post-meta-line"><span class="post-author"><a href="https://github.com/xiang-1208" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>xiang</a></span>&nbsp;<span class="post-category">出版于  <a href="/zh-cn/categories/slam/"><i class="far fa-folder fa-fw"></i>slam</a></span></div>
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-09-17">2021-09-17</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 248 字</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟</span>&nbsp;</div>
+            </div>
+            
+            <hr><div class="details toc" id="toc-static"  data-kept="">
+                    <div class="details-summary toc-title">
+                        <span>目录</span>
+                        <span><i class="details-icon fas fa-angle-right"></i></span>
+                    </div>
+                    <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#orb-slamorb-slam2">ORB-SLAM、ORB-SLAM2</a></li>
+    <li><a href="#dso">DSO</a></li>
+    <li><a href="#svo">SVO</a></li>
+    <li><a href="#loam">LOAM</a></li>
+    <li><a href="#demo">DEMO</a></li>
+    <li><a href="#dvl-slam">DVL-SLAM</a></li>
+  </ul>
+</nav></div>
+                </div><div class="content" id="content"><p>SLAM相关论文综合</p>
+<h2 id="orb-slamorb-slam2">ORB-SLAM、ORB-SLAM2</h2>
+<p>目前最经典的基于特征点的视觉SLAM</p>
+<h2 id="dso">DSO</h2>
+<p>目前最经典的基于直接法的视觉slam</p>
+<p>在DSO中，提出了一种稀疏的、直接的单目视觉里程测量方法。完全直接的方法，联合优化所有涉及的模型参数的完全可能性，包括相机姿态，相机本质，和几何参数(反深度值)。与混合方法(SVO)形成对比，后者回归到联合模型优化的间接公式。</p>
+<h2 id="svo">SVO</h2>
+<p>半直接法视觉slam</p>
+<h2 id="loam">LOAM</h2>
+<p>激光雷达SLAM</p>
+<h2 id="demo">DEMO</h2>
+<p>同LOAM作者，视觉和激光雷达融合深度增强视觉里程计</p>
+<h2 id="dvl-slam">DVL-SLAM</h2>
+<p>视觉和激光雷达融合深度增强视觉里程计，直接法</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info"><div class="post-info-tag"><span><a href="/zh-cn/tags/%E7%BB%BC%E8%BF%B0/">综述</a>
+                </span></div><div class="post-info-line"><div class="post-info-mod">
+                <span>更新于 2021-09-17</span>
+            </div><div class="post-info-mod"><span>
+                            <a class="link-to-markdown" href="/zh-cn/%E8%AE%BA%E6%96%87%E7%BB%BC%E8%BF%B0/index.md" target="_blank">阅读原始文档</a>
+                        </span><span>
+                        &nbsp;|&nbsp;
+                        <a class="link-to-markdown" href="https://github.com/khusika/FeelIt/edit/main/exampleSite/content/posts%5c%e8%ae%ba%e6%96%87%e7%bb%bc%e8%bf%b0%5cindex.zh-cn.md" target="_blank">Improve Article</a>
+                    </span></div>
+        </div><div class="post-info-share">
+            <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://xiang-1208.github.io/zh-cn/%E8%AE%BA%E6%96%87%E7%BB%BC%E8%BF%B0/" data-title="论文综述" data-via="xxxx" data-hashtags="综述"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://xiang-1208.github.io/zh-cn/%E8%AE%BA%E6%96%87%E7%BB%BC%E8%BF%B0/" data-hashtag="综述"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://xiang-1208.github.io/zh-cn/%E8%AE%BA%E6%96%87%E7%BB%BC%E8%BF%B0/" data-title="论文综述"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://xiang-1208.github.io/zh-cn/%E8%AE%BA%E6%96%87%E7%BB%BC%E8%BF%B0/" data-title="论文综述"><i class="fab fa-line fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://xiang-1208.github.io/zh-cn/%E8%AE%BA%E6%96%87%E7%BB%BC%E8%BF%B0/" data-title="论文综述"><i class="fab fa-weibo fa-fw"></i></a></span>
+        </div></div><div class="post-nav">
+            <a href="/zh-cn/emoji-support/" class="next" rel="next" title="Emoji 支持">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
+</div><div id="comments" class="single-card"></div></article></div>
+            </main>
+            <footer class="footer"><div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/khusika/FeelIt" target="_blank" rel="noopener noreffer" title="FeelIt 1.0.1"><i class="fas fa-hand-holding-heart fa-fw"></i> FeelIt</a>
+        </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zh-cn/">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+</div>
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+        .register('/sw.min.js?version=1.0.1', { scope: '/' })
+        .then(() => {
+            console.info('FeelIt\u00A0Service Worker Registered');
+        }, err => console.error('FeelIt\u00A0Service Worker registration failed: ', err));
+
+    navigator.serviceWorker
+        .ready
+        .then(() => {
+            console.info('FeelIt\u00A0Service Worker Ready');
+        });
+}
+</script>
+</footer>
+        </div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-chevron-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment-alt fa-fw"></i>
+            </a></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.0/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.10.3/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.1/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"UAL0NNJWXE","algoliaIndex":"index.zh-cn","algoliaSearchKey":"7b7fbdfb7ee82ee61901f2c6b09b05be","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script src="/js/theme.min.js"></script></body></html>
