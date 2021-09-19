@@ -3,7 +3,7 @@
         <title>FeelIt</title>
         <link>https://xiang-1208.github.io/zh-cn/</link>
         <description>关于 FeelIt 主题</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 17 Sep 2021 16:38:05 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 19 Sep 2021 15:02:47 &#43;0800</lastBuildDate>
             <atom:link href="https://xiang-1208.github.io/zh-cn/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>主题文档 - 基本概念</title>
@@ -40,6 +40,12 @@
     <link>https://xiang-1208.github.io/zh-cn/emoji-support/</link>
     <pubDate>Tue, 01 Oct 2019 17:55:28 &#43;0800</pubDate><guid>https://xiang-1208.github.io/zh-cn/emoji-support/</guid>
     <description><![CDATA[<p>Emoji 可以通过多种方式在 Hugo 项目中启用.</p>]]></description>
+</item>
+<item>
+    <title>ORB-SLAM-译</title>
+    <link>https://xiang-1208.github.io/zh-cn/%E8%AE%BA%E6%96%87/</link>
+    <pubDate>Sun, 19 Sep 2021 15:02:47 &#43;0800</pubDate><guid>https://xiang-1208.github.io/zh-cn/%E8%AE%BA%E6%96%87/</guid>
+    <description><![CDATA[<h1 id="orb-slam一种通用的精确的单目slam系统">ORB-SLAM：一种通用的精确的单目SLAM系统</h1>]]></description>
 </item>
 <item>
     <title>论文综述</title>
