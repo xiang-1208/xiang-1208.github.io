@@ -119,19 +119,6 @@
                     hreflang="en"
                     href="https://xiang-1208.github.io/categories/documentation/"
                     /></url><url>
-            <loc>https://xiang-1208.github.io/</loc><lastmod>2020-03-06T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://xiang-1208.github.io/zh-cn/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://xiang-1208.github.io/fr/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://xiang-1208.github.io/"
-                    /></url><url>
             <loc>https://xiang-1208.github.io/tags/installation/</loc><lastmod>2020-03-06T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -170,6 +157,19 @@
                     rel="alternate"
                     hreflang="en"
                     href="https://xiang-1208.github.io/tags/"
+                    /></url><url>
+            <loc>https://xiang-1208.github.io/</loc><lastmod>2020-03-06T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://xiang-1208.github.io/zh-cn/"
+                        /><xhtml:link
+                        rel="alternate"
+                        hreflang="fr"
+                        href="https://xiang-1208.github.io/fr/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://xiang-1208.github.io/"
                     /></url><url>
             <loc>https://xiang-1208.github.io/tags/content/</loc><lastmod>2020-03-05T15:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"

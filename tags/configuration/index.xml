@@ -1,12 +1,13 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>configuration - Tag - FeelIt</title>
+        <title>configuration - Tag - Xiang&#39;s Blog</title>
         <link>https://xiang-1208.github.io/tags/configuration/</link>
-        <description>configuration - Tag - FeelIt</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 06 Mar 2020 21:29:01 &#43;0800</lastBuildDate><atom:link href="https://xiang-1208.github.io/tags/configuration/" rel="self" type="application/rss+xml" /><item>
+        <description>configuration - Tag - Xiang&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>u201813365@hust.edu.cn (xiang)</managingEditor>
+            <webMaster>u201813365@hust.edu.cn (xiang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 06 Mar 2020 21:29:01 &#43;0800</lastBuildDate><atom:link href="https://xiang-1208.github.io/tags/configuration/" rel="self" type="application/rss+xml" /><item>
     <title>Theme Documentation - Basics</title>
     <link>https://xiang-1208.github.io/theme-documentation-basics/</link>
-    <pubDate>Fri, 06 Mar 2020 21:29:01 &#43;0800</pubDate><guid>https://xiang-1208.github.io/theme-documentation-basics/</guid>
+    <pubDate>Fri, 06 Mar 2020 21:29:01 &#43;0800</pubDate><author>u201813365@hust.edu.cn (xiang)</author><guid>https://xiang-1208.github.io/theme-documentation-basics/</guid>
     <description><![CDATA[<p>Discover what the Hugo - <strong>FeelIt</strong> theme is all about and the core-concepts behind it.</p>]]></description>
 </item>
 </channel>
