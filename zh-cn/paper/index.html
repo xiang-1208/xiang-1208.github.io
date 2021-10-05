@@ -33,7 +33,7 @@
                             "url": "https:\/\/xiang-1208.github.io\/images\/Apple-Devices-Preview.webp",
                             "width":  1129 ,
                             "height":  614 
-                        }],"genre": "posts","keywords": "翻译, 论文, SLAM","wordcount":  6388 ,
+                        }],"genre": "posts","keywords": "翻译, 论文, SLAM","wordcount":  9473 ,
         "url": "https:\/\/xiang-1208.github.io\/zh-cn\/paper\/","datePublished": "2021-09-19T15:02:47+08:00","dateModified": "2021-09-19T15:02:47+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
@@ -122,8 +122,8 @@
 
         <div class="single-card" ><h2 class="single-title animated flipInX">ORB-SLAM-译</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="https://github.com/xiang-1208" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>xiang</a></span>&nbsp;<span class="post-category">出版于  <a href="/zh-cn/categories/%E8%AE%BA%E6%96%87/"><i class="far fa-folder fa-fw"></i>论文</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-09-19">2021-09-19</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 6388 字</span>&nbsp;
-                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 13 分钟</span>&nbsp;</div>
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-09-19">2021-09-19</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 9473 字</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 19 分钟</span>&nbsp;</div>
             </div>
             
             <hr><div class="details toc" id="toc-static"  data-kept="">
@@ -148,6 +148,15 @@
       </ul>
     </li>
     <li><a href="#iv地图自动初始化">IV.地图自动初始化</a></li>
+    <li><a href="#v跟踪">V.跟踪</a>
+      <ul>
+        <li><a href="#aorb特征提取">A.ORB特征提取</a></li>
+        <li><a href="#b通过前一帧估计初始位姿">B.通过前一帧估计初始位姿</a></li>
+        <li><a href="#c通过全局重定位开初始化位姿">C.通过全局重定位开初始化位姿</a></li>
+        <li><a href="#d跟踪局部地图">D.跟踪局部地图</a></li>
+        <li><a href="#e新关键帧的判断">E.新关键帧的判断</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
                 </div><div class="content" id="content"><h1 id="orb-slam一种通用的精确的单目slam系统">ORB-SLAM：一种通用的精确的单目SLAM系统</h1>
@@ -239,7 +248,59 @@ S_{M}=\sum_{i}\left(\rho_{M}\left(d_{c r}^{2}\left(\mathbf{x}_{c}^{i}, \mathbf{x
 \Gamma-d^{2} &amp; \text { if } &amp; d^{2}&lt;T_{M} \newline
 0 &amp; \text { if } &amp; d^{2} \geq T_{M}
 \end{cases}  \tag {2}
-$$</p></div><div class="post-footer" id="post-footer">
+$$
+  其中，$d_{cr}^2$和$d_{rc}^2$是帧到帧之间的对称传递误差<sup>[2]</sup>。$T_M$是无效数据的排除阈值，它的依据是$\chi^2$测试的95%（$T_H$=5.99，$T_F$=3.84，假设在测量误差上有1个像素的标准偏差）。$\Gamma$等于$T_H$，这样两个模型在有效数据上对于同一误差$d$的分值相同，使得运算流程一致。</p>
+<p>  我们从单应矩阵和基本矩阵的计算中选择分值最高的，但如果两个模型分值都不高（没有足够的局内点），则算法流程重启，从step1开始重新计算。</p>
+<p> 3）模型选择：</p>
+<p>  如果场景是平面，近平面或存在低视差的情况，则可以通过单映矩阵来求解。同样地，我们也可以找到一个基础矩阵，但问题是基础矩阵不能够很好的约束该问题<sup>[2]</sup>，而且从基础矩阵中计算得到的运动结果是错误的。在这种情况下，我们应该选择单映矩阵才能保证地图初始的正确性，或者如果检测到低视差的情况则不进行初始化工作。另一方面，对于非平面场景且有足够的视差的情况则可以通过基础矩阵来计算，而在这种情况下单映矩阵只有基于平面点或者低视差的匹配点才能找到。因此，在这种情况下我们应该选择基础矩阵。我们利用如下强大的启发式进行计算：
+$$
+R_{H}=\frac{S_{H}}{S_{H}+S_{F}} \tag{3}
+$$
+  如果$R_H$&gt;0.45，这表示二维平面和低视差的情况，我们将选择计算单应矩阵。其他的情况，我们选择基础矩阵。
+ 4）运动和从运动到结构的重构：</p>
+<p>  一旦选好模型，我们就可以获得相应的运动状态。如果是单应矩阵，我们按照Faugeras等人发表的论文<sup>[23]</sup>中提到的方法得到8种运动假设。该方法提出用cheriality测试来选择有效解。然而，如果在低视差的情况下，这些测试就会失效，因为云点很容易在相机的前面或后面移动，会导致选解错误。我们提出直接根据这8种解来进行三角化，然后检查是否有一种解可以使得所有的云点都位于两个相机的前面，且重投影误差较小。如果没有一个明确的解胜出，我们就不执行初始化，重新从第一步开始。这种方法使初始化程序在低视差和两个交叉的视图情况下更具鲁棒性，这也是我们整个算法体现鲁棒性的关键所在。</p>
+<p>  如果是基本矩阵，我们使用标定矩阵$K$来将其转换为本质矩阵：
+$$
+E_{r c}={K}^{T} {F}_{r c} {K} \tag {4}
+$$
+  然后通过文献<sup>[4]</sup>中的奇异值分解得到4个运动解。和上文一样，通过三角化特征点，来选择一个正解。</p>
+<p> 5）Bundle adjustment：</p>
+<p>  最后我们执行一个全局BA，详细优化过程参见附录，以优化初始重构得到的点云地图。</p>
+<p>  如图3所示是对论文<sup>[39]</sup>中的室外NewCollege机器人图像序列进行地图初始化的例子，室外环境下初始化工作具有很大挑战性。从图中可以看出，PTAM算法和LSD-SLAM算法对位于同一平面上的所有点都进行了初始化，而我们的方法是当两幅图像有足够视差之后才进行初始化，并基于基础矩阵得到了正确的结果。</p>
+<center>
+    <img style=border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="ORB-SLAM.3.bmp">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图3.基于NewCollege图像序列[39]进行地图初始化，最上面一行：PTAM算法,中间一行：LSD-SLAM算法，底下一行：ORB-SLAM算法。其中，PTAM算法和LSD-SLAM算法初始化了一个错误的平面地图，而我们的方法自动选择在两帧图像存在足够视差的情况下再利用基础矩阵初始化。如果人工选择关键帧，则PTAM算法也能够初始化得很好</div>
+</center>
+</br>
+<h2 id="v跟踪">V.跟踪</h2>
+<p>  在这一部分，我们将详细介绍跟踪线程在相机每帧图像上执行的步骤。在几个步骤中都提到的相机位姿优化，包括运动BA，将在附录部分进行阐述。</p>
+<h3 id="aorb特征提取">A.ORB特征提取</h3>
+<p>  我们在8层图像金字塔上提取FAST角点，金字塔图像尺度因子为1.2。如果图像的分辨率从512*384到752*480，我们发现提取1000个角点比较合适，如果分辨率提高，如KITTI数据集<sup>[40]</sup>，则提取2000个角点。为了确保特征点均匀分布，我们将每层图像分成网格，每格提取至少5个角点。然后检测每格角点，如果角点数量不够，就调整阈值。如果某些单元格内没有角点，则其对应提取的角点数量也相应减少。最后，根据保留的FAST的角点计算方向和ORB特征描述子。ORB特征描述子将用于算法后续所有的特征匹配，而不是像PTAM算法中那样根据图像区块的相关性进行搜索。</p>
+<h3 id="b通过前一帧估计初始位姿">B.通过前一帧估计初始位姿</h3>
+<p>  如果上一帧图像跟踪成功，我们就用运动速率恒定模型来预测当前相机的位置，然后搜索上一帧图像中的特征点在地图中的对应云点与当前帧图像的匹配点，最后利用搜索到的匹配点对当前相机的位姿进一步优化。但是，如果没有找到足够的匹配点（比如，运动模型失效，非匀速运动），我们就加大搜索范围，搜索地图云点附近的点在当前帧图像中是否有匹配点，然后通过寻找到的对应匹配点对来优化当前时刻的相机位姿。</p>
+<h3 id="c通过全局重定位开初始化位姿">C.通过全局重定位开初始化位姿</h3>
+<p>  如果扩大了搜索范围还是跟踪不到特征点，（那么运动模型已经失效），则计算当前帧图像的词袋（BoW）向量,并利用BoW词典选取若干关键帧作为备选匹配帧（这样可以加快匹配速度）。然后我们计算每个备选关键帧与地图云点相对应的ORB特征，如第三部分E节所描述。接着，对每个备选关键帧轮流执行PnP算法<sup>[41]</sup>计算当前帧的位姿（RANSAC迭代求解）。如果我们找到一个姿态能涵盖足够多的有效点，则搜索该关键帧对应的更多匹配云点。最后，基于找到的所有匹配点对相机位置进一步优化，如果有效数据足够多，则跟踪程序将持续执行。</p>
+<h3 id="d跟踪局部地图">D.跟踪局部地图</h3>
+<p>  一旦我们获得了相机的初始位姿估计以及一组初始特征匹配点，我们就可以将更多地地图云点投影到图像上以寻找更多的匹配点。为了降低大地图的复杂性，我们只映射局部地图。该局部地图包含一组关键帧$K_1 $,它们和当前关键帧有共同的地图云点，还包括与关键帧$K_1$在<code>covisibility graph</code>中相邻的一组关键帧$K_2$。这个局部地图中有一个参考关键帧$K_{\mathrm{ref}} \in {K}_{1}$，它与当前帧具有最多共同的地图云点。现在对K1, K2中可见的每个地图云点，在当前帧中进行如下搜索：</p>
+<p> 1）计算地图点云在当前帧图像中的投影$\mathrm{x}$，如果投影位置超出图像边缘，就将删去对应点云。</p>
+<p> 2）计算当前视图射线$v$和地图云点平均视图方向$\mathbf{n}$的夹角。如果$\mathbf{v} \cdot \mathbf{n}&lt;\cos \left(60^{\circ}\right)$，就删去对应点云。</p>
+<p> 3）计算地图点云到相机中心的距离$\mathrm {d}$，如果它不在地图点云的尺度不变区间内，即$d \notin\left[d_{\min }, d_{\max }\right]$，就删去该电云。</p>
+<p> 4）计算每帧图像的尺度比$d / d_{\min }$。</p>
+<p> 5）对比地图云点的特征描述子$D$和当前帧中还未匹配的ORB特征，在预测的尺度层和靠近$\mathrm{x}$的云点作最优匹配。</p>
+<p>  相机位姿最后通过当前帧中获得所有的地图云点进行优化。</p>
+<h3 id="e新关键帧的判断">E.新关键帧的判断</h3>
+<p>  最后一步是决定当前帧是否可以作为关键帧。由于局部地图构建的过程中有一个机制去筛选冗余的关键帧，所以我们需要尽快地插入新的关键帧以保证跟踪线程对相机的运动更具鲁棒性，尤其是对旋转运动。我们根据以下要求插入新的关键帧：</p>
+<p> 1）距离上一次全局重定位后需要超过20帧图像。</p>
+<p> 2）局部地图构建处于空闲状态，或距上一个关键帧插入后，已经有超过20帧图像。</p>
+<p> 3）当前帧跟踪少于50个地图云点。</p>
+<p> 4）当前帧跟踪少于参考关键帧$K_{ref}$云点的90%。</p>
+<p>  与PTAM中用关键帧之间的距离作为判断标准不同，我们加入一个最小的视图变换，如条件4。条件1 确保一个好的重定位，条件3保证好的跟踪。如果局部地图构建处于忙状态（条件2的后半部分）的时候插入关键帧，就会发信号去暂停局部BA，这样就可以尽可能快地去处理新的关键帧。</p></div><div class="post-footer" id="post-footer">
     <div class="post-info"><div class="post-info-tag"><span><a href="/zh-cn/tags/%E7%BF%BB%E8%AF%91/">翻译</a>
                 </span><span><a href="/zh-cn/tags/%E8%AE%BA%E6%96%87/">论文</a>
                 </span><span><a href="/zh-cn/tags/slam/">SLAM</a>
