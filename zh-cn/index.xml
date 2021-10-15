@@ -4,7 +4,7 @@
         <link>https://xiang-1208.github.io/zh-cn/</link>
         <description>上邪的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>u201813365@hust.edu.cn (xiang)</managingEditor>
-            <webMaster>u201813365@hust.edu.cn (xiang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 12 Oct 2021 15:06:23 &#43;0800</lastBuildDate>
+            <webMaster>u201813365@hust.edu.cn (xiang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 19 Sep 2021 15:02:47 &#43;0800</lastBuildDate>
             <atom:link href="https://xiang-1208.github.io/zh-cn/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>主题文档 - 基本概念</title>
@@ -41,12 +41,6 @@
     <link>https://xiang-1208.github.io/zh-cn/emoji-support/</link>
     <pubDate>Tue, 01 Oct 2019 17:55:28 &#43;0800</pubDate><author>u201813365@hust.edu.cn (xiang)</author><guid>https://xiang-1208.github.io/zh-cn/emoji-support/</guid>
     <description><![CDATA[<p>Emoji 可以通过多种方式在 Hugo 项目中启用.</p>]]></description>
-</item>
-<item>
-    <title>DSO</title>
-    <link>https://xiang-1208.github.io/zh-cn/dso/</link>
-    <pubDate>Tue, 12 Oct 2021 15:06:23 &#43;0800</pubDate><author>u201813365@hust.edu.cn (xiang)</author><guid>https://xiang-1208.github.io/zh-cn/dso/</guid>
-    <description><![CDATA[<h1 id="direct-sparse-odometry直接稀疏里程计">Direct Sparse Odometry：直接稀疏里程计</h1>]]></description>
 </item>
 <item>
     <title>ORB-SLAM-译</title>
