@@ -258,7 +258,7 @@ $ c = \pm\sqrt{a^2 + b^2} $ 和 \\( f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^
 
 呈现的输出效果如下:
 
-$ c = \pm\sqrt{a^2 + b^2} $ 和 \\( f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi \\)
+$ c = \pm\sqrt{a^2 + b^2} $ 和自定义公式块和行内公式 \\( f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi \\)
 
 {{< admonition tip >}}
 你可以在 [网站配置](../theme-documentation-basics#site-configuration) 中自定义公式块和行内公式的分割符.
