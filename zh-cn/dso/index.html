@@ -19,7 +19,7 @@
 <meta name="application-name" content="XIANG">
 <meta name="apple-mobile-web-app-title" content="XIANG"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://xiang-1208.github.io/zh-cn/dso/" /><link rel="prev" href="https://xiang-1208.github.io/zh-cn/orb-slam/" /><link rel="next" href="https://xiang-1208.github.io/zh-cn/emoji-support/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://xiang-1208.github.io/zh-cn/dso/" /><link rel="prev" href="https://xiang-1208.github.io/zh-cn/orb-slam/" /><link rel="next" href="https://xiang-1208.github.io/zh-cn/svo/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -33,7 +33,7 @@
                             "url": "https:\/\/xiang-1208.github.io\/images\/Apple-Devices-Preview.webp",
                             "width":  1129 ,
                             "height":  614 
-                        }],"genre": "posts","keywords": "翻译, 论文, SLAM","wordcount":  6626 ,
+                        }],"genre": "posts","keywords": "翻译, 论文, SLAM","wordcount":  7091 ,
         "url": "https:\/\/xiang-1208.github.io\/zh-cn\/dso\/","datePublished": "2021-10-12T15:06:23+08:00","dateModified": "2021-10-12T15:06:23+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
@@ -122,8 +122,8 @@
 
         <div class="single-card" ><h2 class="single-title animated flipInX">DSO</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="https://github.com/xiang-1208" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>xiang</a></span>&nbsp;<span class="post-category">出版于  <a href="/zh-cn/categories/%E8%AE%BA%E6%96%87/"><i class="far fa-folder fa-fw"></i>论文</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-10-12">2021-10-12</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 6626 字</span>&nbsp;
-                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 14 分钟</span>&nbsp;</div>
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-10-12">2021-10-12</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7091 字</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 15 分钟</span>&nbsp;</div>
             </div>
             
             <hr><div class="details toc" id="toc-static"  data-kept="">
@@ -148,6 +148,7 @@
           </ul>
         </li>
         <li><a href="#22-模型组成">2.2 模型组成</a></li>
+        <li><a href="#23-模型组成">2.3 模型组成</a></li>
       </ul>
     </li>
   </ul>
@@ -265,9 +266,9 @@ $$
 \mathbf{R} &amp; \mathrm{t} \newline
 0 &amp; 1
 \end{array}\right]:=\mathrm{T}_{j} \mathrm{~T}_{i}^{-1}
+{\tag 6}
 $$
-\left[\begin{array}{cc}\mathbf{R} &amp; \mathrm{t} \ 0 &amp; 1\end{array}\right]:=\mathrm{T}_{j} \mathrm{~T}_{i}^{-1}</p>
-<p>为了让我们的方法在没有已知曝光时间的情况下对序列进行操作，我们包含了一个额外的仿射亮度传递函数，由下式给出$e^{-a_{i}}\left(I_{i}-b_{i}\right)$。请注意，与之前的大多数公式<sup>[13, 6]</sup>相比，标量因子 $e^{-a_{i}}$ 是对数参数化的。这既可以防止它变成负数，又可以避免乘法（即指数增长）漂移引起的数值问题。</p>
+为了让我们的方法在没有已知曝光时间的情况下对序列进行操作，我们包含了一个额外的仿射亮度传递函数，由下式给出$e^{-a_{i}}\left(I_{i}-b_{i}\right)$。请注意，与之前的大多数公式<sup>[13, 6]</sup>相比，标量因子 $e^{-a_{i}}$ 是对数参数化的。这既可以防止它变成负数，又可以避免乘法（即指数增长）漂移引起的数值问题。</p>
 <p>  除了使用鲁棒的 Huber 惩罚之外，我们还应用了一个梯度相关的加权 $w_p$，由下式给出:
 $$
 w_{\mathbf{p}}:=\frac{c^{2}}{c^{2}+\left|\nabla I_{i}(\mathbf{p})\right|_{2}^{2}} {\tag 7}
@@ -294,7 +295,16 @@ E_{\text {prior }}:=\sum_{i \in \mathcal{F}}\left(\lambda_{a} a_{i}^{2}+\lambda_
 $$
 如果没有可用的光度校准，我们设置 $t_i = 1$ 和 $\lambda_{a}=\lambda_{b}=0$，因为在这种情况下，他们需要对相机的（未知）变化的曝光时间进行建模。作为旁注，应该提到的是，如果 $x_i$ 和 $y_i$ 都包含噪声测量值，乘法因子 $a^{*}=\operatorname{argmax}_a \sum_{i}\left(a x_i-y_i\right)^2$ 的 ML 估计量是有偏差的，在无约束的情况$\lambda_{a} = 0$下导致 $a$ 漂移。虽然这通常对估计的姿势几乎没有影响，但如果场景只包含很少的、微弱的强度变化，它可能会引入偏差。</p>
 <p><strong>点维数.</strong> 在所提出的直接模型中，与间接模型中的三个未知数不同，一个点仅由一个参数（参考坐标系中的逆深度）参数化。为了理解这种差异的原因，我们首先注意到，在这两种情况下，3D 点实际上是连续、真实世界 3D 表面上任意定位的离散样本。不同之处在于定义表面上的 2D 位置的方式。在间接方法中，它被隐式定义为点，它（投影到图像中）在使用的角点响应函数中产生最大值。这意味着表面以及点在表面上的位置都是未知数，需要估计。在我们的直接方法中，点被简单地定义为源像素的光线撞击表面的点，因此只剩下一个未知数。除了减少参数的数量外，这自然能使逆深度参数化，在高斯框架中更适合于表示不确定性，而不是对极远点<sup>[3]</sup>的不确定性。</p>
-<p><strong>一致性.</strong> 严格来说，所提出的直接稀疏模型确实允许多次使用某些观察值（像素值），而其他的模型则根本不使用。这是因为——尽管我们的点选择策略试图通过在空间中均匀分布点来避免这种情况（参见第 3.2 节）——我们允许点观察重叠，因此依赖于相同的像素值。这尤其发生在纹理很少的场景中，其中所有点都必须从纹理图像区域的一个小子集中选择。然而，我们认为这在实践中的影响可以忽略不计，并且，如果需要，可以通过删除（或降低）使用相同像素值的观察来避免。</p></div><div class="post-footer" id="post-footer">
+<p><strong>一致性.</strong> 严格来说，所提出的直接稀疏模型确实允许多次使用某些观察值（像素值），而其他的模型则根本不使用。这是因为——尽管我们的点选择策略试图通过在空间中均匀分布点来避免这种情况（参见第 3.2 节）——我们允许点观察重叠，因此依赖于相同的像素值。这尤其发生在纹理很少的场景中，其中所有点都必须从纹理图像区域的一个小子集中选择。然而，我们认为这在实践中的影响可以忽略不计，并且，如果需要，可以通过删除（或降低）使用相同像素值的观察来避免。</p>
+<h3 id="23-模型组成">2.3 模型组成</h3>
+<p>  我们遵循Leutenegger等人<sup>[17]</sup>的方法，使用Gauss-Newton算法优化滑动窗口中的总误差（8），这在速度和灵活性之间进行了很好的权衡。</p>
+<p>  为了便于表示，我们将 (1) 中定义的算子⊞扩展到所有优化参数——对于 $\mathrm{SE}(3)$ 以外的参数，它表示常规加法。我们将使用$\zeta \in \mathrm{SE}(3)^{n} \times \mathbb{R}^{m}$来表示所有的优化变量，包括相机位姿、仿射亮度参数、反深度值和相机内在函数。与<sup>[17]</sup>中一样，边缘化依赖于 $\zeta$ 中的参数的残差将固定在一个切线空间中，在这个切线空间中，有关该参数的任何未来信息(增量更新)都会累积。我们用 $\zeta_0$ 表示这个切线空间的评估点，并用 $\boldsymbol{x} \in \mathfrak{s e}(3)^{n} \times \mathbb{R}^{m}$ 表示积累的增量更新。因此，当前状态估计由 $\zeta=\boldsymbol{x}<em>{\text {⊞ }} \zeta</em>{0}$ 给出。图 6 显示了不同变量之间的关系。</p>
+<p><strong>高斯牛顿优化.</strong> 我们计算高斯牛顿系统为:
+$$
+\mathbf{H}=\mathbf{J}^{T} \mathbf{W} \mathbf{J} \quad \text { and } \quad \mathbf{b}=-\mathbf{J}^{T} \mathbf{W} \mathbf{r} {\tag {10}}
+$$
+其中 $\mathbf{W} \in \mathbb{R}^{n \times n}$ 是包含权重的对角矩阵，$\mathbf{r} \in \mathbb{R}^{n}$ 是堆叠残差向量，$\mathbf{J} \in \mathbb{R}^{n \times d}$ 是 $\mathbf{r}$ 的雅克比矩阵。</p>
+<p>  请注意，每个点对能量贡献 $\mathcal{N}_{\mathbf{p}}$ = 8 个残差。为符号简单起见，我们将在下面只考虑单个残差 $r_k$，</p></div><div class="post-footer" id="post-footer">
     <div class="post-info"><div class="post-info-tag"><span><a href="/zh-cn/tags/%E7%BF%BB%E8%AF%91/">翻译</a>
                 </span><span><a href="/zh-cn/tags/%E8%AE%BA%E6%96%87/">论文</a>
                 </span><span><a href="/zh-cn/tags/slam/">SLAM</a>
@@ -309,7 +319,7 @@ $$
         </div><div class="post-info-share">
             <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://xiang-1208.github.io/zh-cn/dso/" data-title="DSO" data-hashtags="翻译,论文,SLAM"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://xiang-1208.github.io/zh-cn/dso/" data-hashtag="翻译"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://xiang-1208.github.io/zh-cn/dso/" data-title="DSO"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://xiang-1208.github.io/zh-cn/dso/" data-title="DSO"><i class="fab fa-line fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://xiang-1208.github.io/zh-cn/dso/" data-title="DSO"><i class="fab fa-weibo fa-fw"></i></a></span>
         </div></div><div class="post-nav"><a href="/zh-cn/orb-slam/" class="prev" rel="prev" title="ORB-SLAM-译"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
-            <a href="/zh-cn/emoji-support/" class="next" rel="next" title="Emoji 支持">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
+            <a href="/zh-cn/svo/" class="next" rel="next" title="SVO译">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
 </div><div id="comments" class="single-card"><div id="vssue"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://github.com/meteorlxy/vssue">Vssue</a>.
             </noscript></div></article></div>
