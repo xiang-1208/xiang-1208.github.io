@@ -113,10 +113,7 @@
 <div class="search-dropdown mobile">
     <div id="search-dropdown-mobile"></div>
 </div><main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">目录</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single" data-toc="enable">
+                <div class="container"><article class="page single" data-toc="disable">
 
         
 
@@ -126,34 +123,7 @@
                     <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 13 分钟</span>&nbsp;</div>
             </div>
             
-            <hr><div class="details toc" id="toc-static"  data-kept="">
-                    <div class="details-summary toc-title">
-                        <span>目录</span>
-                        <span><i class="details-icon fas fa-angle-right"></i></span>
-                    </div>
-                    <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#i-引言">I. 引言</a>
-      <ul>
-        <li><a href="#a-视觉运动估计方法的分类">A. 视觉运动估计方法的分类</a></li>
-        <li><a href="#b-相关工作">B. 相关工作</a></li>
-        <li><a href="#c-贡献与概要">C. 贡献与概要</a></li>
-      </ul>
-    </li>
-    <li><a href="#ii-系统概述">II. 系统概述</a></li>
-    <li><a href="#iii-标记">III. 标记</a></li>
-    <li><a href="#iv-运动估计">IV. 运动估计</a>
-      <ul>
-        <li><a href="#a-基于稀疏模型的图像对齐">A. 基于稀疏模型的图像对齐</a></li>
-        <li><a href="#a-通过特征对齐实现松弛">A. 通过特征对齐实现松弛</a></li>
-        <li><a href="#c-位姿与结构优化">C. 位姿与结构优化</a></li>
-        <li><a href="#d-讨论">D. 讨论</a></li>
-      </ul>
-    </li>
-    <li><a href="#v-建图">V. 建图</a></li>
-  </ul>
-</nav></div>
-                </div><div class="content" id="content"><h1 id="svo快速的半直接单目视觉里程计">SVO：快速的半直接单目视觉里程计</h1>
+            <hr><div class="content" id="content"><h1 id="svo快速的半直接单目视觉里程计">SVO：快速的半直接单目视觉里程计</h1>
 <p><strong>摘要</strong>：我们提出了一种半直接单目视觉里程计算法，它比当前最先进的方法精确、稳健且速度更快。半直接法消除了运动估计中昂贵的特征提取和匹配技术的需要，直接在像素级上操作，做到了在高帧率下的亚像素精度（subpixel precision），以及采用概率建图（probabilistic mapping）方法对异常测量值进行显式建模，从而得到较少的异常值和更可靠的点。精确的高帧率运动估计在纹理较少、重复性和高频的场景中具有更强的鲁棒性。该算法应用于GPS无效环境下的无人机状态估计，在嵌入式计算机上以每秒55帧的速度运行，在消费型笔记本电脑上以每秒300帧以上的速度运行。我们将我们的方法称为SVO（半直接视觉里程计）。</p>
 <h2 id="i-引言">I. 引言</h2>
 <p>  微型飞行器 (MAV) 很快将在灾害管理、工业检测和环境保护方面发挥重要作用。对于此类操作，仅基于 GPS 信息进行导航是不够的。 精确的完全自主操作需要 MAV 依赖替代定位系统。 因此，为了最小的重量和功耗，<sup>[1]-[5]</sup>建议仅使用一个向下看的相机与惯性测量单元结合使用。这种设置允许在室外区域完全自主的航点跟踪<sup>[1]-[3]</sup>以及 MAV 和地面机器人之间的协作<sup>[4] [5]</sup>。</p>
@@ -248,7 +218,7 @@ $$
 \mathbf J^{\top} \mathbf J \xi = - \mathbf J^{\top} \delta \mathbf I(0) {\tag {12}}
 $$
 这样可解决更新 $\xi$。注意，通过使用逆合成方法，可以预先计算雅可比矩阵，因为它在所有迭代中保持恒定(参考面片 $\mathbf I_{k-1} (\mathbf u_i)$ 和点 $\mathbf p_i$ 不变)，这将导致显著的加速<sup>[27]</sup>。</p>
-<h3 id="a-通过特征对齐实现松弛">A. 通过特征对齐实现松弛</h3>
+<h3 id="b-通过特征对齐实现松弛">B. 通过特征对齐实现松弛</h3>
 <p>  下一步是将相机与前一帧对齐。通过反向投影，找到的相对位姿 $\mathbf T_{k,k−1}$ 隐式地定义了新图像中所有可见3D点的特征位置的初始猜测。由于3D点的位置不准确，因此相机姿势不准确，因此可以改进这种初始猜测。为了减少漂移，相机的位姿应该与地图对齐，而不是与前一帧对齐。</p>
 <p>  从估计的相机位姿可以将看到的地图的所有3D点都投影到图像中，从而估计出相应的2D特征位置 $\mathbf u_i^{\prime}$（见图3）。对于每个重投影的点，将具有最近的观察角度识别为关键帧 $r$ 。然后，特征对齐步骤通过最小化当前图像中的补丁相对于关键帧器中的参考补丁的光度误差来单独优化新图像中的所有2D特征位置 $\mathbf u_i$：</p>
 <p>$$
