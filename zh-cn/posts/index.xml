@@ -4,7 +4,7 @@
         <link>https://xiang-1208.github.io/zh-cn/posts/</link>
         <description>所有文章 | Xiang&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>u201813365@hust.edu.cn (xiang)</managingEditor>
-            <webMaster>u201813365@hust.edu.cn (xiang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 16 Nov 2021 18:47:38 &#43;0800</lastBuildDate><atom:link href="https://xiang-1208.github.io/zh-cn/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>u201813365@hust.edu.cn (xiang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 08 Jul 2022 16:20:27 &#43;0800</lastBuildDate><atom:link href="https://xiang-1208.github.io/zh-cn/posts/" rel="self" type="application/rss+xml" /><item>
     <title>主题文档 - 基本概念</title>
     <link>https://xiang-1208.github.io/zh-cn/theme-documentation-basics/</link>
     <pubDate>Fri, 06 Mar 2020 21:40:32 &#43;0800</pubDate><author>u201813365@hust.edu.cn (xiang)</author><guid>https://xiang-1208.github.io/zh-cn/theme-documentation-basics/</guid>
@@ -41,6 +41,12 @@
     <description><![CDATA[<p>Emoji 可以通过多种方式在 Hugo 项目中启用.</p>]]></description>
 </item>
 <item>
+    <title>ERASOR-译</title>
+    <link>https://xiang-1208.github.io/zh-cn/erasor/</link>
+    <pubDate>Fri, 08 Jul 2022 16:20:27 &#43;0800</pubDate><author>u201813365@hust.edu.cn (xiang)</author><guid>https://xiang-1208.github.io/zh-cn/erasor/</guid>
+    <description><![CDATA[<h1 id="erasor基于自我中心比率的伪占用的动态对象移除静态3d点云地图构建">ERASOR：基于自我中心比率的伪占用的动态对象移除静态3D点云地图构建</h1>]]></description>
+</item>
+<item>
     <title>SVO译</title>
     <link>https://xiang-1208.github.io/zh-cn/svo/</link>
     <pubDate>Tue, 16 Nov 2021 18:47:38 &#43;0800</pubDate><author>u201813365@hust.edu.cn (xiang)</author><guid>https://xiang-1208.github.io/zh-cn/svo/</guid>
@@ -57,12 +63,6 @@
     <link>https://xiang-1208.github.io/zh-cn/orb-slam/</link>
     <pubDate>Sun, 19 Sep 2021 15:02:47 &#43;0800</pubDate><author>u201813365@hust.edu.cn (xiang)</author><guid>https://xiang-1208.github.io/zh-cn/orb-slam/</guid>
     <description><![CDATA[<h1 id="orb-slam一种通用的精确的单目slam系统">ORB-SLAM：一种通用的精确的单目SLAM系统</h1>]]></description>
-</item>
-<item>
-    <title>论文综述</title>
-    <link>https://xiang-1208.github.io/zh-cn/%E8%AE%BA%E6%96%87%E7%BB%BC%E8%BF%B0/</link>
-    <pubDate>Fri, 17 Sep 2021 16:38:05 &#43;0800</pubDate><author>u201813365@hust.edu.cn (xiang)</author><guid>https://xiang-1208.github.io/zh-cn/%E8%AE%BA%E6%96%87%E7%BB%BC%E8%BF%B0/</guid>
-    <description><![CDATA[<p>SLAM相关论文综合</p>]]></description>
 </item>
 </channel>
 </rss>
