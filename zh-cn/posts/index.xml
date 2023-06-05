@@ -4,7 +4,7 @@
         <link>https://xiang-1208.github.io/zh-cn/posts/</link>
         <description>所有文章 | Xiang&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>u201813365@hust.edu.cn (xiang)</managingEditor>
-            <webMaster>u201813365@hust.edu.cn (xiang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 08 Jul 2022 16:20:27 &#43;0800</lastBuildDate><atom:link href="https://xiang-1208.github.io/zh-cn/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>u201813365@hust.edu.cn (xiang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 08 May 2023 18:19:00 &#43;0800</lastBuildDate><atom:link href="https://xiang-1208.github.io/zh-cn/posts/" rel="self" type="application/rss+xml" /><item>
     <title>主题文档 - 基本概念</title>
     <link>https://xiang-1208.github.io/zh-cn/theme-documentation-basics/</link>
     <pubDate>Fri, 06 Mar 2020 21:40:32 &#43;0800</pubDate><author>u201813365@hust.edu.cn (xiang)</author><guid>https://xiang-1208.github.io/zh-cn/theme-documentation-basics/</guid>
@@ -41,6 +41,12 @@
     <description><![CDATA[<p>Emoji 可以通过多种方式在 Hugo 项目中启用.</p>]]></description>
 </item>
 <item>
+    <title>MOT</title>
+    <link>https://xiang-1208.github.io/zh-cn/mot/</link>
+    <pubDate>Mon, 08 May 2023 18:19:00 &#43;0800</pubDate><author>u201813365@hust.edu.cn (xiang)</author><guid>https://xiang-1208.github.io/zh-cn/mot/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>ERASOR-译</title>
     <link>https://xiang-1208.github.io/zh-cn/erasor/</link>
     <pubDate>Fri, 08 Jul 2022 16:20:27 &#43;0800</pubDate><author>u201813365@hust.edu.cn (xiang)</author><guid>https://xiang-1208.github.io/zh-cn/erasor/</guid>
@@ -57,12 +63,6 @@
     <link>https://xiang-1208.github.io/zh-cn/dso/</link>
     <pubDate>Tue, 12 Oct 2021 15:06:23 &#43;0800</pubDate><author>u201813365@hust.edu.cn (xiang)</author><guid>https://xiang-1208.github.io/zh-cn/dso/</guid>
     <description><![CDATA[<h1 id="direct-sparse-odometry直接稀疏里程计">Direct Sparse Odometry：直接稀疏里程计</h1>]]></description>
-</item>
-<item>
-    <title>ORB-SLAM-译</title>
-    <link>https://xiang-1208.github.io/zh-cn/orb-slam/</link>
-    <pubDate>Sun, 19 Sep 2021 15:02:47 &#43;0800</pubDate><author>u201813365@hust.edu.cn (xiang)</author><guid>https://xiang-1208.github.io/zh-cn/orb-slam/</guid>
-    <description><![CDATA[<h1 id="orb-slam一种通用的精确的单目slam系统">ORB-SLAM：一种通用的精确的单目SLAM系统</h1>]]></description>
 </item>
 </channel>
 </rss>

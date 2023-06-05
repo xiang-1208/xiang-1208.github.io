@@ -80,8 +80,8 @@
                     hreflang="zh-cn"
                     href="https://xiang-1208.github.io/zh-cn/emoji-support/"
                     /></url><url>
-            <loc>https://xiang-1208.github.io/zh-cn/erasor/</loc><lastmod>2022-07-08T16:20:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://xiang-1208.github.io/zh-cn/posts/</loc><lastmod>2022-07-08T16:20:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://xiang-1208.github.io/zh-cn/mot/</loc><lastmod>2023-05-08T18:19:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://xiang-1208.github.io/zh-cn/posts/</loc><lastmod>2023-05-08T18:19:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://xiang-1208.github.io/posts/"
@@ -94,7 +94,7 @@
                     hreflang="zh-cn"
                     href="https://xiang-1208.github.io/zh-cn/posts/"
                     /></url><url>
-            <loc>https://xiang-1208.github.io/zh-cn/</loc><lastmod>2022-07-08T16:20:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://xiang-1208.github.io/zh-cn/</loc><lastmod>2023-05-08T18:19:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://xiang-1208.github.io/"
@@ -107,6 +107,7 @@
                     hreflang="zh-cn"
                     href="https://xiang-1208.github.io/zh-cn/"
                     /></url><url>
+            <loc>https://xiang-1208.github.io/zh-cn/erasor/</loc><lastmod>2022-07-08T16:20:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://xiang-1208.github.io/zh-cn/categories/</loc><lastmod>2021-12-02T10:10:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
